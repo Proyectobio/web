@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/vector-gratis/rio-campo-verde-arboles-montanas_104785-285.jpg?size=626&ext=jpg'); /* Cambia 'imagen-de-fondo.jpg' por la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-size: 6rem; /* Tamaño de fuente grande */
+    color: black; /* Color negro */
+}
+
+.button {
+    padding: 20px 40px;
+    font-size: 2rem; /* Tamaño de fuente grande para el botón */
+    background-color: #5cc59d; /* Color verde */
+    color: white; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #158660; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
