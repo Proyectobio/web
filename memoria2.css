@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(214, 214, 4); /* Color de fondo amarillo */
+    background-image: url('https://www.canal26.com/media/image/2011/08/29/300848.jpg?s=2&a=210879');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px; /* Ancho total de los cuadros */
+    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 10px; /* Espacio entre los cuadros */
+}
+
+.memory-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.memory-card {
+    position: relative;
+    width: calc(25% - 10px); /* Ancho de cada cuadro */
+    height: calc(25vw - 10px); /* Alto de cada cuadro */
+    max-height: 120px; /* Altura máxima de los cuadros */
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: #8f5c5c; /* Color de fondo para el frente */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.memory-card::before,
+.memory-card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #8f5c5c; /* Color de fondo para el reverso */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card.flip::before {
+    transform: rotateY(0deg);
+}
+
+.memory-card[data-framework="1"]::before,
+.memory-card[data-framework="1"]::after {
+    background-image: url('https://i.pinimg.com/originals/34/e5/b0/34e5b06e3a9c5cde08d3224e158875e4.jpg'); /* Imagen para la carta 1 */
+}
+
+.memory-card[data-framework="2"]::before,
+.memory-card[data-framework="2"]::after {
+    background-image: url('https://th.bing.com/th/id/OIP.WiU8raCuK1aXQDA_64MSeAAAAA?rs=1&pid=ImgDetMain'); /* Imagen para la carta 2 */
+}
+
+.memory-card[data-framework="3"]::before,
+.memory-card[data-framework="3"]::after {
+    background-image: url('https://th.bing.com/th/id/OIP.mBLwTfVbCQ4won_VIPLWPgAAAA?rs=1&pid=ImgDetMain'); /* Imagen para la carta 3 */
+}
+
+.memory-card[data-framework="4"]::before,
+.memory-card[data-framework="4"]::after {
+    background-image: url('https://i.pinimg.com/originals/34/e5/b0/34e5b06e3a9c5cde08d3224e158875e4.jpg'); /* Imagen para la carta 4 */
+}
+
+.memory-card[data-framework="5"]::before,
+.memory-card[data-framework="5"]::after {
+    background-image: url('https://th.bing.com/th/id/R.91451124f0c31c1def57f7fb591a9904?rik=bwkRiDcfgMw6Yw&riu=http%3a%2f%2fstatic1.wikia.nocookie.net%2f__cb20110411234926%2fthebackyardigansencyclopedia%2fimages%2f8%2f83%2fBloom_Meister.jpg&ehk=h5wh17%2fT1DOcMUrTiRCHQVMaPES3OCeisQXbRqeowGU%3d&risl=&pid=ImgRaw&r=0'); /* Imagen para la carta 5 */
+}
+
+.memory-card[data-framework="6"]::before,
+.memory-card[data-framework="6"]::after {
+    background-image: url('https://th.bing.com/th/id/R.91451124f0c31c1def57f7fb591a9904?rik=bwkRiDcfgMw6Yw&riu=http%3a%2f%2fstatic1.wikia.nocookie.net%2f__cb20110411234926%2fthebackyardigansencyclopedia%2fimages%2f8%2f83%2fBloom_Meister.jpg&ehk=h5wh17%2fT1DOcMUrTiRCHQVMaPES3OCeisQXbRqeowGU%3d&risl=&pid=ImgRaw&r=0'); /* Imagen para la carta 6 */
+}
+
+.memory-card[data-framework="7"]::before,
+.memory-card[data-framework="7"]::after {
+    background-image: url('https://th.bing.com/th/id/OIP.WiU8raCuK1aXQDA_64MSeAAAAA?rs=1&pid=ImgDetMain'); /* Imagen para la carta 7 */
+}
+
+.memory-card[data-framework="8"]::before,
+.memory-card[data-framework="8"]::after {
+    background-image: url('https://th.bing.com/th/id/OIP.mBLwTfVbCQ4won_VIPLWPgAAAA?rs=1&pid=ImgDetMain'); /* Imagen para la carta 8 */
+}
+
+#check-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#check-button:hover, #back-button:hover {
+    background-color: #158660; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}

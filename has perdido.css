@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(214, 214, 4); /* Color de fondo amarillo */
+    background-image: url('https://www.canal26.com/media/image/2011/08/29/300848.jpg?s=2&a=210879');
+
+
+}
+.title {
+    font-size: 8rem; 
+    color: #252523; 
+    animation: moveText 2s ease-in-out infinite alternate; 
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(-10px); 
+    }
+    to {
+        transform: translateX(10px); 
+    }
+}
